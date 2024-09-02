@@ -1,66 +1,89 @@
-evmNetworkId: 1
-priceMultiplier: 1
-issueCreatorMultiplier: 2
-paymentPermitMaxPrice: 9007199254740991
-maxConcurrentAssigns: 9007199254740991
-assistivePricing: false
-disableAnalytics: false
-commentIncentives: false
-registerWalletWithVerification: false
-promotionComment: "
-
-  <h6>If you enjoy the DevPool experience, please follow <a href='https://github.com/ubiquity'>Ubiquity on GitHub</a> and star <a href='https://github.com/ubiquity/devpool-directory'>this repo</a> to show your support. It helps a lot!</h6>"
-defaultLabels: []
-timeLabels:
-  - name: "Time: <1 Hour"
-  - name: "Time: <1 Day"
-  - name: "Time: <1 Week"
-  - name: "Time: <2 Weeks"
-  - name: "Time: <1 Month"
-priorityLabels:
-  - name: "Priority: 1 (Normal)"
-  - name: "Priority: 2 (Medium)"
-  - name: "Priority: 3 (High)"
-  - name: "Priority: 4 (Urgent)"
-  - name: "Priority: 5 (Emergency)"
-commandSettings:
-  - name: "start"
-    enabled: false
-  - name: "stop"
-    enabled: false
-  - name: "wallet"
-    enabled: false
-  - name: "payout"
-    enabled: false
-  - name: "multiplier"
-    enabled: false
-  - name: "query"
-    enabled: false
-  - name: "ask"
-    enabled: false
-  - name: "allow"
-    enabled: false
-  - name: "autopay"
-    enabled: false
-incentives:
-  comment:
-    elements: {}
-    totals:
-      word: 0
-enableAccessControl:
-  label: false
-  organization: true
-staleBountyTime: "0d"
-timeRangeForMaxIssue: 24
-timeRangeForMaxIssueEnabled: false
-permitBaseUrl: "https://pay.ubq.fi"
-botDelay: 100
-followUpTime: "4 days"
-disqualifyTime: "7 days"
-newContributorGreeting:
-  enabled: true
-  header: "Thank you for contributing to UbiquiBot! Please be sure to set your wallet address before completing your first bounty so that the automatic payout upon task completion will work for you."
-  helpMenu: true
-  footer: "###### Also please star this repository and [@ubiquity/devpool-directory](https://github.com/ubiquity/devpool-directory/) to show your support. It helps a lot!"
-safe-address: "0x51FE94E47efA6E862CeAB1A82af60Ef342bAc429"
-privateKeyEncrypted: "oRaSFHdpD7054vUm4UyKBlCYgEMzxhthvPXzwnqeUSmzFYBoHLcKY1NUFOXyAUzoQulgM1oMMSuTDcgWTU4AwevkVPbpaNqgvuoGZtc6C6a-KxKyVtAXIM901GEhkAabJa0VcAH1Q9IW_lSTW3418FA4Yr0"
+plugins:
+  issues.closed:
+    - uses:
+      - plugin: rndquu/conversation-rewards@development
+        with:
+          evmNetworkId: 100
+          evmPrivateEncrypted: "wOzNgt-yKT6oFlOVz5wrBLUSYxAbKGE9Co-yvT8f9lePsx7wJwPVugS9186zdhr1T4UpkpXvq9ii5M-nWfrydMnllSkowH4LirRZsHbvRVSvDoH_uh80p6HpwqDSG3g4Nwx5q0GD3H-ne4vwXMuwWAHd"
+          erc20RewardToken: "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d"
+          incentives:
+            userExtractor:
+              enabled: true
+              redeemTask: true
+            dataPurge:
+              enabled: true
+            formattingEvaluator:
+              multipliers:
+                - role: [ ISSUE_SPECIFICATION ]
+                  multiplier: 3
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.1
+                    html:
+                      br: 0
+                      code: 5
+                      p: 1
+                      em: 0
+                      img: 0
+                      strong: 0
+                      blockquote: 0
+                      h1: 1
+                      h2: 1
+                      h3: 1
+                      h4: 1
+                      h5: 1
+                      h6: 1
+                      a: 5
+                      li: 1
+                      td: 1
+                      hr: 0
+                - role: [ ISSUE_AUTHOR ]
+                  multiplier: 1
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.2
+                - role: [ ISSUE_ASSIGNEE ]
+                  multiplier: 0
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0
+                - role: [ ISSUE_COLLABORATOR ]
+                  multiplier: 1
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.1
+                - role: [ ISSUE_CONTRIBUTOR ]
+                  multiplier: 0.25
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.1
+                - role: [ PULL_SPECIFICATION ]
+                  multiplier: 0
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0
+                - role: [ PULL_AUTHOR ]
+                  multiplier: 0
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.2
+                - role: [ PULL_ASSIGNEE ]
+                  multiplier: 1
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.1
+                - role: [ PULL_COLLABORATOR ]
+                  multiplier: 1
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.1
+                - role: [ PULL_CONTRIBUTOR ]
+                  multiplier: 0.25
+                  rewards:
+                    regex:
+                      "\\b\\w+\\b": 0.1
+            permitGeneration:
+              enabled: true
+            githubComment:
+              post: true
+              debug: false
