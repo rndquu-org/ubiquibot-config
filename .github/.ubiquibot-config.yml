@@ -1,7 +1,7 @@
 plugins:
   issues.closed:
     - uses:
-      - plugin: rndquu/conversation-rewards@development
+      - plugin: rndquu/conversation-rewards@fix/nonce-generation
         with:
           evmNetworkId: 100
           evmPrivateEncrypted: "wOzNgt-yKT6oFlOVz5wrBLUSYxAbKGE9Co-yvT8f9lePsx7wJwPVugS9186zdhr1T4UpkpXvq9ii5M-nWfrydMnllSkowH4LirRZsHbvRVSvDoH_uh80p6HpwqDSG3g4Nwx5q0GD3H-ne4vwXMuwWAHd"
