@@ -1,7 +1,7 @@
 plugins:
   issues.closed:
     - uses:
-      - plugin: rndquu/conversation-rewards@development
+      - plugin: rndquu/conversation-rewards@feat/104
         with:
           evmNetworkId: 100
           evmPrivateEncrypted: "bQwhMWcoAif6qOKGHYLd1SrBtMS64ukjDYTq2AFWyzq7ye_kY7xDZ-LtSLyxrE3acKjF3V8O64oW2i_HItWhCoJ96mr2Kqp4ZX93bDS3pdVLbloyzGc-1GYfMecefThBPvV7n_hMzHsBhPADl8lBKw"
