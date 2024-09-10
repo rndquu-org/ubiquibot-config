@@ -4,7 +4,7 @@ plugins:
       - plugin: rndquu/conversation-rewards@feat/104
         with:
           evmNetworkId: 100
-          evmPrivateEncrypted: "IIOvKydJ4z3dlA-ul9vv5U5PpdMvbVH_5qt_u-AXhXRk2KhdHc1p0N_puPDnZZFmpo7VATp7hVGyNCZeOUpUHhSNZ7fPJxICBabjg7yvtWKM4LNtLqSdAXuIw1z1raAVNBDN3A2zp5Avm8UA6mM8a4_D9ndd6vsflXpkPw"
+          evmPrivateEncrypted: "hEOG7Ok9NJHvufWTX-mEzKVToJjTtbazdtH_RkyNHwHY5UGiCX7K3zPtBPQpBFuFAxnbjPeD8k9TP7DLwN-jFqoKuGSYFEimz70BQXBfAmvK7Qm_SkV_o_bRZzzDIEpYSOYGUOhjQRoUnOKeCxd8XKZHFdPexRm9P97ilQo7cUYvkI5M"
           erc20RewardToken: "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d"
           incentives:
             userExtractor:
